@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kghbot-2502"
+    labels:
+        app: "kghbot-2502"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: kghbot8a66-kghbot-2502.a2c84b9369eb49fea1f0.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kghbot-2502"
+                servicePort: 80
